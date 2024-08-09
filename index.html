@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <img src="img/Logo.svg" alt="logo" class="logo">
+        <button class="btn-exit btn"></button>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <div class="tab">
+                    <button class="tablinks property" onclick="openItem(event, 'property')">
+                        <img src="img/property.svg" alt="icon" class="tab-icon">
+                        Имущество
+                    </button>
+                    <button class="tablinks inventory" onclick="openItem(event, 'inventory')">
+                        <img src="img/inventory.svg" alt="icon" class="tab-icon">
+                        Инвентаризация
+                    </button>
+                    <button class="tablinks employees" onclick="openItem(event, 'employees')">
+                        <img src="img/employees.svg" alt="icon" class="tab-icon">
+                        Сотрудники
+                    </button>
+                    <button class="tablinks notifications" onclick="openItem(event, 'notifications')">
+                        <img src="img/notifications.svg" alt="icon" class="tab-icon">
+                        Уведомления
+                    </button>
+                    <button class="tablinks locations" onclick="openItem(event, 'locations')" id="defaultOpen">
+                        <img src="img/locations.svg" alt="icon" class="tab-icon">
+                        Локации
+                    </button>
+                    <button class="tablinks settings" onclick="openItem(event, 'settings')">
+                        <img src="img/settings.svg" alt="icon" class="tab-icon">
+                        Настройки
+                    </button>
+                    <button class="tablinks hide" onclick="openItem(event, 'hide')">
+                        <img src="img/hide.svg" alt="icon" class="tab-icon">
+                        Скрыть меню
+                    </button>
+                </div>
+            </nav>
+
+            <section id="locations" class="tabcontent">
+                <div class="box-locations">
+                    <div class="tabcontent-locations">
+                        <h1>Локации / Все локации</h1>
+                        <div class="container-btn">
+                            <button class="btn-menu btn-blue">Все локации</button>
+                            <button class="btn-menu btn-white">Импорт/Экспорт</button>
+                            <button class="btn-menu btn-white">Настройки</button>
+                        </div>
+                        <button id="openModalBtn" class="btn-create btn-blue">
+                            <img src="img/plus.svg" alt="plus" style="padding-right: 10px;">
+                            Создать локацию
+                        </button>
+
+                        <table class="table-locations">
+                            <tbody>
+                                <tr>
+                                    <td><img src="img/table-plus.svg" alt="icon">
+                                        <img src="img/point.svg" alt="icon">
+                                    </td>
+                                    <td class="locat">Локация 1</td>
+                                    <td class="number">512</td>
+                                    <td class="edit-label">Редактировать</td>
+                                    <td class="delete-label">Удалить</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><img src="img/table-plus.svg" alt="icon">
+                                        <img src="img/point.svg" alt="icon">
+                                    </td>
+                                    <td class="otdel">Подотдел 1</td>
+                                    <td class="number">10</td>
+                                    <td>Для утерь</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><img src="img/table-minus.svg" alt="icon">
+                                        <img src="img/point.svg" alt="icon">
+                                    </td>
+                                    <td class="otdel">Подотдел 2</td>
+                                    <td class="number">100</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <img src="img/point.svg" alt="icon">
+                                    </td>
+                                    <td class="ototdel">Подподотдел 1</td>
+                                    <td class="number">2</td>
+                                    <td>Виртуальная</td>
+                                    <td style="font-weight:700">Без штрихкода</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><img src="img/table-minus.svg" alt="icon">
+                                        <img src="img/point.svg" alt="icon">
+                                    </td>
+                                    <td class="otdel">Подотдел 3</td>
+                                    <td class="number">400</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/table-minus.svg" alt="icon">
+                                        <img src="img/point.svg" alt="icon">
+                                    </td>
+                                    <td class="locat">Локация 2</td>
+                                    <td class="number">100</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/table-minus.svg" alt="icon">
+                                        <img src="img/point.svg" alt="icon">
+                                    </td>
+                                    <td class="locat">Локация 3</td>
+                                    <td class="number">100</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="box-search">
+                        <div>
+                            <button class="synchronization btn-blue">
+                                <img src="img/synchronization.svg" alt="icon" style="padding-right: 10px;">
+                                синхронизация <span style="font-size: 10px; padding-left: 10px;">(17.05.2024
+                                    15:23:21)</span>
+                            </button>
+                        </div>
+                        <div class="checkbox-search">
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                    checked>
+                                <p class="checkbox-label" style="font-size: 14px; font-weight: 500;">Поиск по точному
+                                    вхождению</p>
+                            </div>
+                            <div>
+                                <input type="text" id="search" placeholder="Поиск">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="settings" class="tabcontent">
+                <h1>Настройки / Локации</h1>
+                <div class="container-btn">
+                    <button class="btn-menu btn-white">Имущество</button>
+                    <button class="btn-menu btn-white">Инвентаризация</button>
+                    <button class="btn-menu btn-white">Сотрудники</button>
+                    <button class="btn-menu btn-blue">Локации</button>
+                    <button class="btn-menu btn-white">Уведомления</button>
+                    <button class="btn-menu btn-white">Справочники</button>
+                    <button class="btn-menu btn-white">Пользователь</button>
+                </div>
+                <div class="btn-table">
+                <h2>Настройка полей таблицы</h2>
+                <table class="table-settings">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="th-icon">
+                                Описание
+                            </th>
+                            <th>Сортировка</th>
+                            <th>ID</th>
+                            <th>Тип поля</th>
+                            <th>Выводить в таблицу</th>
+                            <th>Обязательно</th>
+                            <th>Удалить</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-opition">
+                                <img src="img/point.svg" alt="icon" class="point-img">
+                                <p style="padding: 10px;">Название</p>
+                                <img src="img/red.svg" alt="icon" class="red-img">
+                            </td>
+                            <td>
+                                <img src="img/help-circle.svg" alt="icon" style="width: 24; height: 24;">
+                            </td>
+                            <td>
+                                <input type="text" value="500" style="width: 81px; height: 31px;">
+                            </td>
+                            <td>1001</td>
+                            <td>Строка</td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+
+
+                        <tr>
+                            <td class="table-opition">
+                                <img src="img/point.svg" alt="icon" class="point-img">
+                                <p style="padding: 10px;">Цена</p>
+                                <img src="img/red.svg" alt="icon" class="red-img">
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                <input type="text" value="510" style="width: 81px; height: 31px;">
+                            </td>
+                            <td>1002</td>
+                            <td>Число</td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="table-opition">
+                                <img src="img/point.svg" alt="icon" class="point-img">
+                                <p style="padding: 10px;">МОЛ</p>
+                                <img src="img/red.svg" alt="icon" class="red-img">
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                <input type="text" value="510" style="width: 81px; height: 31px;">
+                            </td>
+                            <td>1003</td>
+                            <td>Справочник
+                                <img src="img/file.svg" alt="icon">
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;">
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="table-opition">
+                                <img src="img/point.svg" alt="icon" class="point-img">
+                                <p style="padding: 10px;">Фото</p>
+                                <img src="img/red.svg" alt="icon" class="red-img">
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                <input type="text" value="510" style="width: 81px; height: 31px;">
+                            </td>
+                            <td>1004</td>
+                            <td>Число</td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;">
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="table-opition">
+                                <img src="img/point.svg" alt="icon" class="point-img">
+                                <p style="padding: 10px;">Цвет</p>
+                                <img src="img/red.svg" alt="icon" class="red-img">
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                <input type="text" value="510" style="width: 81px; height: 31px;">
+                            </td>
+                            <td>1005</td>
+                            <td>Строка</td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;">
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td class="table-opition">
+                                <img src="img/point.svg" alt="icon" class="point-img">
+                                <p style="padding: 10px;">Локация</p>
+                                <img src="img/red.svg" alt="icon" class="red-img">
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                <input type="text" value="510" style="width: 81px; height: 31px;">
+                            </td>
+                            <td>1006</td>
+                            <td>Справочник
+                                <img src="img/file.svg" alt="icon">
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;">
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="table-opition">
+                                <img src="img/point.svg" alt="icon" class="point-img">
+                                <p style="padding: 10px;">Количество</p>
+                                <img src="img/red.svg" alt="icon" class="red-img">
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                <input type="text" value="560" style="width: 81px; height: 31px;">
+                            </td>
+                            <td>1007</td>
+                            <td>Число
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;">
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td class="table-opition">
+                                <img src="img/point.svg" alt="icon" class="point-img">
+                                <p style="padding: 10px;">Описание</p>
+                                <img src="img/red.svg" alt="icon" class="red-img">
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                <input type="text" value="570" style="width: 81px; height: 31px;">
+                            </td>
+                            <td>1008</td>
+                            <td>Текст</td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;">
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td class="table-opition">
+                                <img src="img/point.svg" alt="icon" class="point-img">
+                                <p style="padding: 10px;">Количество</p>
+                                <img src="img/red.svg" alt="icon" class="red-img">
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                <input type="text" value="580" style="width: 81px; height: 31px;">
+                            </td>
+                            <td>1009</td>
+                            <td>Число</td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;"
+                                        checked>
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox" class="checkbox" style="margin-right: 10px;">
+                                    <p class="checkbox-label"></p>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <button id="openModalBtn" class="btn-create btn-blue">
+                    <img src="img/plus.svg" alt="plus" style="padding-right: 10px;">
+                    добавить поле
+                </button>
+            </div>
+            </section>
+        </aside>
+
+        <!-- Модальное окно -->
+        <div id="modal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-content">
+                <h2 class="modalTitle">Создать локацию</h2>
+                <div class="input-container">
+                    <input type="text" id="title" placeholder="" aria-label="Название">
+                    <label for="title">Название</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="Barcode" placeholder="" aria-label="Barcode">
+                    <label for="Barcode">Штрихкод</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="RFID" placeholder="" aria-label="RFID">
+                    <label for="RFID">RFID</label>
+                </div>
+                <select id="dropdown" name="options" placeholder="Вложенность">
+                    <option value="option1">Вложенность</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+
+                <div class="box-text">
+                    <p>Виртуальная локация</p>
+                    <img src="img/switch.svg" alt="icon">
+                </div>
+
+                <div class="box-text">
+                    <p>Локация для утерь</p>
+                    <img src="img/switch.svg" alt="icon">
+                </div>
+                <div class="modal-create-btn">
+                    <button class="btn-save btn-blue">
+                        <img src="img/create.svg" alt="icon">
+                        Создать
+                    </button>
+                    <button class="close-btn btn-white">
+                        Отменить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальное окно редактировать -->
+        <div id="modalred" class="modalred" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-content modal-content-red">
+                <h2 class="modalTitle modalredTitle">Изменить локацию %название%</h2>
+                <div class="input-container">
+                    <input type="text" id="title" placeholder="" aria-label="Название">
+                    <label for="title">Название</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="Barcode" placeholder="" aria-label="Barcode">
+                    <label for="Barcode">Штрихкод</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="RFID" placeholder="" aria-label="RFID">
+                    <label for="RFID">RFID</label>
+                </div>
+                <select id="dropdown" name="options" placeholder="Вложенность">
+                    <option value="option1">Локация 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+
+                <div class="box-text">
+                    <p>Виртуальная локация</p>
+                    <img src="img/switch.svg" alt="icon">
+                </div>
+
+                <div class="box-text">
+                    <p>Локация для утерь</p>
+                    <img src="img/switch.svg" alt="icon">
+                </div>
+                <div class="modal-create-btn">
+                    <button class="btn-save btn-white" style="border: 1px solid #172139;">
+                        <img src="img/remove.svg" alt="icon">
+                        Удалить
+                    </button>
+                    <button class="close-btn close-btnred btn-white">
+                        Отменить
+                    </button>
+                </div>
+                <button class="btn-save btn-blue" style="width: 100%; margin-top: 17px;">
+                    <img src="img/create.svg" alt="icon">
+                    Сохранить
+                </button>
+            </div>
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="btn-footer">
+            <button class="btn-save btn-blue" style="margin-right: 20px;">
+                <img src="img/create.svg" alt="icon">
+                Сохранить
+            </button>
+            <button class="close-btn btn-white">
+                Отменить
+            </button>
+        </div>
+        <div class="additional-info">
+            <span style="margin-right: 30px;">Последний приём 20.09.2021 18:36:21</span>
+            <span>Последняя передача 20.09.2021 18:38:21</span>
+        </div>
+        <a href="#'" class="doc">
+            <img src="img/doc.svg" alt="icon" style="padding-right: 7px;">
+            Документация
+        </a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
